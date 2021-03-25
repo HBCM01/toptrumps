@@ -1,0 +1,11 @@
+.App {
+    background: rgb(37, 33, 34);
+    font-family: 'Roboto';
+    margin: 0;
+}
+
+.GameContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
