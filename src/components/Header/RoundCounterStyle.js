@@ -11,9 +11,9 @@ export const RoundCounterWrapper = styled.div`
 `;
 
 export const RoundCounterBody = styled.div.attrs(props => ({
-    color: props.activeRoundStyling.color
+    isSelectedr: props.isSelected,
     }))`
-    color: ${props => props.activeRoundStyling.color};
+    color: ${(props) => (props.isSelected ? "red" : "000000")};
     padding: 8px; 
     font-size: 30px;
     display: inline-block;

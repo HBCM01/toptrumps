@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import {  useDispatch,  } from 'react-redux';
+import {  useDispatch } from 'react-redux';
 import { incrementRound } from '../../redux/turnSlice';
+import { startGame } from '../../redux/gameStateSlice'
 import { SButton } from './StartButtonStyle.js';
 
 const StartButton = () => {
@@ -12,7 +13,7 @@ const StartButton = () => {
 
     const roundReset = () => {
         setIsRoundActive(false);
-        setRoundCounter(0);
+        setRoundCounter(1);
         setButtonBackground({background: "#C4C4C4", color: "rgb(0,0,0)"});
         
     };
@@ -29,7 +30,7 @@ const StartButton = () => {
                     }     
             }
             
-        if(isRoundActive && roundCounter < 5) {
+        if(isRoundActive && roundCounter <= 6) {
             roundTimer();
            }  else {
             roundReset()
@@ -37,9 +38,12 @@ const StartButton = () => {
     }, [isRoundActive, timer, roundCounter]);
 
     const startRound = () => {
-    
-        !isRoundActive ? setIsRoundActive(true) : setRoundCounter(false);
-        // dispatch(startTimer(seconds));
+        if (!isRoundActive) {
+            dispatch(startGame(true))
+            setIsRoundActive(true);
+        } else {
+            setRoundCounter(false)
+        }
         setButtonBackground({background: "#FDB901", color: "#EF1D1E"})
     };
 
