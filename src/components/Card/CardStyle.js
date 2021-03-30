@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+
 export const CardWrapper = styled.div`
   background: #302b2c;
   margin: 49px auto 0;
@@ -11,11 +12,30 @@ export const CardHeader = styled.header`
   padding-bottom: 16px;
 `;
 
-export const ImageHolder = styled.div`
-  background-image: url(https://images.pexels.com/photos/34153/pexels-photo.jpg?auto=compress&cs=tinysrgb&h=350);
+export const ImageHolder = styled.div.attrs((props) => ({
+  backgroundImage: props.imageUrl,
+}))`
+
+  background-image: url(${props => props.imageUrl});
+  background-color: #CCCCCC;
+  border-style: solid;
+  border-color: #FDB901;
+  max-width: 80%;
+  max-height: auto;
+  height: 150px;
+  padding: 24px;
+  margin: 24px;
+  border-radius: 24px;
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
+  
+`;
+
+export const ImageWrapper = styled.div`
+ 
+  margin: 40px;
+  background: #312B2C;
 `;
 export const CardHeading = styled.h1`
   font-size: 24px;
@@ -42,9 +62,13 @@ export const StatWrapper = styled.div`
 
 export const StatBody = styled.div.attrs((props) => ({
   isSelected: props.isSelected,
+  isSuccesful: props.isSuccesful
 }))`
-  background: #646262;
+  background: ${(props) => (props.isSuccesful ? "green" : "#646262")};
   color: ${(props) => (props.isSelected ? "red" : "white")};
+  border-radius: 24px;
+  align-items: center;
+  max-width: 95%;
   padding: 8px;
   flex: 1;
 `;

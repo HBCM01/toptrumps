@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import {  useDispatch } from 'react-redux';
 import { incrementRound } from '../../redux/turnSlice';
+import { activePlayer } from '../../redux/activePlayerSlice'
 import { startGame } from '../../redux/gameStateSlice'
 import { SButton } from './StartButtonStyle.js';
 
@@ -35,12 +36,13 @@ const StartButton = () => {
            }  else {
             roundReset()
            }           
-    }, [isRoundActive, timer, roundCounter]);
+    }, [isRoundActive, timer, roundCounter, dispatch]);
 
     const startRound = () => {
         if (!isRoundActive) {
             dispatch(startGame(true))
             setIsRoundActive(true);
+            dispatch(activePlayer(true))
         } else {
             setRoundCounter(false)
         }

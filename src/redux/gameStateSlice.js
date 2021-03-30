@@ -9,9 +9,9 @@ export const gameStateSlice = createSlice({
         startGame: state => {
             if (!state.value)
             state.value = true
-        }
+        },
     }
 })
 
-export const { startGame } = gameStateSlice.actions;
+export const { startGame, activePlayer } = gameStateSlice.actions;
 export default gameStateSlice.reducer ;
