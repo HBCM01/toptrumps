@@ -7,7 +7,6 @@ import TrumpCard from './Card/TrumpCard';
 import Header from './Header/Header';
 import StartButton from './Button/StartButton';
 import PlayerCounter from './PlayerCounter/PlayerCounter';
-import ReverseTrumpCard from './Card/ReverseTrumpCard';
 
 export const stats = 
     [{playerA: {
@@ -35,7 +34,6 @@ const App = () => {
         dispatch(trumpStat(stats))
     }, [isGameActive, dispatch])
 
-    if (isGameActive) {
         return (
             <div className='App'>
                 <Header />
@@ -45,25 +43,10 @@ const App = () => {
                     <TrumpCard playerStats={stats[1].playerB} isHuman={false} player={'playerB'}/>
                 </div>
                 <div className="GameContainer">
-                    <PlayerCounter />
-                    <PlayerCounter />   
+                    <PlayerCounter isHuman={true}/>
+                    <PlayerCounter isHuman={false}/>   
                 </div>
             </div>)
-    } else
-    return (
-        <div className='App'>
-            <Header />
-            <div className='GameContainer'>
-                <ReverseTrumpCard />
-                <StartButton />
-                <ReverseTrumpCard />
-            </div>
-            <div className="GameContainer">
-                <PlayerCounter />
-                <PlayerCounter />   
-            </div>
-        </div>
-    );
 }
 
 export default App;

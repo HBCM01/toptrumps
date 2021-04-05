@@ -62,9 +62,10 @@ export const StatWrapper = styled.div`
 
 export const StatBody = styled.div.attrs((props) => ({
   isSelected: props.isSelected,
-  isSuccesful: props.isSuccesful
+  isSuccesful: props.isSuccesful,
+  isWrongChoice: props.isWrongChoice
 }))`
-  background: ${(props) => (props.isSuccesful ? "green" : "#646262")};
+  background: ${(props) => (props.isSuccesful ? "green" : "#646262") };
   color: ${(props) => (props.isSelected ? "red" : "white")};
   border-radius: 24px;
   align-items: center;

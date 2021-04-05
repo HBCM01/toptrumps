@@ -3,6 +3,7 @@ import {  useDispatch } from 'react-redux';
 import { incrementRound } from '../../redux/turnSlice';
 import { activePlayer } from '../../redux/activePlayerSlice'
 import { startGame } from '../../redux/gameStateSlice'
+import { playerScore } from "../../redux/PlayerGameScoreSlice"
 import { SButton } from './StartButtonStyle.js';
 
 const StartButton = () => {
@@ -15,8 +16,7 @@ const StartButton = () => {
     const roundReset = () => {
         setIsRoundActive(false);
         setRoundCounter(1);
-        setButtonBackground({background: "#C4C4C4", color: "rgb(0,0,0)"});
-        
+        setButtonBackground({background: "#C4C4C4", color: "rgb(0,0,0)"});       
     };
     
     useEffect(() => {
@@ -26,6 +26,7 @@ const StartButton = () => {
                     if(timer === 0) {
                         counter +=1;
                         setRoundCounter(counter);
+                        dispatch(playerScore())
                         dispatch(incrementRound(counter))
                         setTimer(5);               
                     }     

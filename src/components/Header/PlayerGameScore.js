@@ -4,15 +4,17 @@ import { useSelector } from 'react-redux';
 
 const PlayerGameScore = ({player}) => {
     const isGameActive = useSelector(state => state.gameState.value);
+    const playerGameScore = useSelector(state =>  state.gameScore.value.player);
     const [playerScoreStyling, setPlayerScoreStyling] = useState({visibility: "hidden"});
 
     useEffect(()=> {
         if (isGameActive)
             setPlayerScoreStyling({visibility: "visible"});
+            console.log(playerGameScore)
     }, [isGameActive]);
     return (
 
-        <PlayerGameScoreWrapper playerScoreStyling={playerScoreStyling}>{player} : 0</PlayerGameScoreWrapper>
+        <PlayerGameScoreWrapper playerScoreStyling={playerScoreStyling}>{player} : {playerGameScore} </PlayerGameScoreWrapper>
     )
 }
 

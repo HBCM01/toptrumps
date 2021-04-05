@@ -8,7 +8,7 @@ export const trumpStatSlice = createSlice({
     reducers: {
         trumpStat: state => { 
             state.value = stats
-            // console.log(state.value)
+            console.log(state.value)
         },
     }
 })

@@ -2,15 +2,12 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const activePlayerSlice = createSlice({
     name: 'activePlayer', 
-    initialState: {
-        value: false
-    }, 
+    initialState: false, 
     reducers: {
-        activePlayer: state => {
-            state.value = true
-        }
+        activePlayer: state => true,
+        swapPlayer: state => false
     }
 })
 
-export const { activePlayer } = activePlayerSlice.actions;
+export const { activePlayer, swapPlayer } = activePlayerSlice.actions;
 export default activePlayerSlice.reducer ;
