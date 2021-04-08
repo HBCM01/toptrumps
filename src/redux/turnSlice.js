@@ -8,7 +8,7 @@ export const turnSlice = createSlice({
     reducers: {
         incrementRound: state => {
             if (state.value <= 6) 
-            state.value += 1
+            state.value += 1;
         }
     }
 })

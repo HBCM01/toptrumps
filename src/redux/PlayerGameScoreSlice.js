@@ -7,10 +7,13 @@ export const playerGameScoreSlice = createSlice({
     }, 
     reducers: {
         playerScore: (state) =>  {
-            state.value.player += 1
+            state.value.player += 1;
             return state
         },
-        computerScore: (state) => state.computer ++
+        computerScore: (state) => {
+            state.value.computer += 1;
+            return state
+        }
     }
 })
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import {HeaderContainer } from './HeaderStyle'
+import {HeaderContainer } from './HeaderStyle';
 import RoundCounter from './RoundCounter';
-import PlayerGameScore from './PlayerGameScore'
+import PlayerGameScore from './PlayerGameScore';
 
 const Header = () => {
     return (

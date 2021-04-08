@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { trumpStat } from '../redux/trumpStatSlice'
+import { trumpStat } from '../redux/trumpStatSlice';
 
 import "../styles.css";
 import TrumpCard from './Card/TrumpCard';
@@ -12,7 +12,7 @@ export const stats =
     [{playerA: {
         name: "Bob Jones",
         age: 24,
-        totalAppearances: 39,
+        totalAppearances: 15,
         totalGoals: 52,
         redCards: 3,
         yellowCards: 4
@@ -28,19 +28,19 @@ export const stats =
 
 const App = () => {
     const isGameActive = useSelector(state => state.gameState.value);
-    const dispatch = useDispatch()
+    const dispatch = useDispatch();
     
     useEffect(() => {
-        dispatch(trumpStat(stats))
+        dispatch(trumpStat(stats));
     }, [isGameActive, dispatch])
 
         return (
             <div className='App'>
                 <Header />
                 <div className='GameContainer'>
-                    <TrumpCard playerStats={stats[0].playerA} isHuman={true} player={'playerA'}/>
+                    <TrumpCard playerStats={stats[0].playerA} isVisible={true} player={'playerA'}/>
                     <StartButton />
-                    <TrumpCard playerStats={stats[1].playerB} isHuman={false} player={'playerB'}/>
+                    <TrumpCard playerStats={stats[1].playerB} isVisible={false} player={'playerB'}/>
                 </div>
                 <div className="GameContainer">
                     <PlayerCounter isHuman={true}/>

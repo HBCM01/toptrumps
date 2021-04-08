@@ -8,8 +8,8 @@ const PlayerCounter = ({isHuman}) => {
     const PlayerRoundScore= useSelector(state => state.playerScore.value);
 
     useEffect(() => {
-        console.log(isHuman)
-    }, [PlayerRoundScore, isHuman])
+     
+    }, [PlayerRoundScore])
 
     if (isHuman) {
      return (

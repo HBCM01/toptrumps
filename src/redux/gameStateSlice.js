@@ -7,11 +7,15 @@ export const gameStateSlice = createSlice({
     }, 
     reducers: {
         startGame: state => {
-            if (!state.value)
-            state.value = true
+          state.value = true;
+          return state;
         },
+        endGame: state => state => {
+            state.value = false;
+            return state;
+        }
     }
 })
 
-export const { startGame, activePlayer } = gameStateSlice.actions;
+export const { startGame, endGame } = gameStateSlice.actions;
 export default gameStateSlice.reducer ;

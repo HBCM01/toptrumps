@@ -10,7 +10,6 @@ const PlayerGameScore = ({player}) => {
     useEffect(()=> {
         if (isGameActive)
             setPlayerScoreStyling({visibility: "visible"});
-            console.log(playerGameScore)
     }, [isGameActive]);
     return (
 

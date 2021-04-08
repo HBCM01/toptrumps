@@ -7,15 +7,15 @@ export const playerScoreSlice = createSlice({
     }, 
     reducers: {
         playerScore: (state) =>  {
-            state.value.player += 10
+            state.value.player += 10;
             return state
         },
         opponentScore: (state) => {
-            state.value.opponent += 10
+            state.value.opponent += 10;
             return state
         },
     }                     
 })
 
 export const { playerScore, opponentScore } = playerScoreSlice.actions;
-export default playerScoreSlice.reducer;
+export default playerScoreSlice.reducer; 

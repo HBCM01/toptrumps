@@ -4,7 +4,6 @@ import gameStateSlice from "./gameStateSlice";
 import activePlayerSlice from "./activePlayerSlice";
 import trumpStatSlice from "./trumpStatSlice";
 import playerScoreSlice from "./playerScoreSlice";
-import computerPlayerActiveSlice from "./computerPlayerScoreSlice";
 import playerGameScoreSlice from "./PlayerGameScoreSlice";
 
 export default configureStore({
@@ -15,7 +14,6 @@ export default configureStore({
         activePlayer: activePlayerSlice,
         trumpStat: trumpStatSlice,
         playerScore: playerScoreSlice,
-        computerPlayerActive: computerPlayerActiveSlice,
-        gameScore: playerGameScoreSlice
+        gameScore: playerGameScoreSlice,
     }
 })
